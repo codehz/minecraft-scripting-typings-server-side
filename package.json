@@ -1,0 +1,11 @@
+{
+  "name": "minecraft-scripting-typings-server-side",
+  "version": "1.0.0",
+  "description": "typescript definition for minecraft scripting engine (ServerSide only)",
+  "author": "CodeHz",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeHz/minecraft-scripting-typings-server-side.git"
+  },
+  "license": "MIT"
+}
