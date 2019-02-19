@@ -31,7 +31,7 @@ declare namespace StoneServer {
   }
   interface CommandOverload {
     arguments: CommandArgument[];
-    handler: (this: StoneServerInstance, ...args: any[]) => void
+    handler: (this: StoneServerInstance, ...args: any[]) => void;
   }
 }
 
@@ -96,3 +96,23 @@ declare interface StoneServerInstance extends ServerInstance<StoneTypeTraits> {
    */
   transferPlayer(player: EntityObject, host: string, port: number): void;
 }
+
+declare type SQLite3Param =
+  | {
+      [index: string]: any;
+    }
+  | Array<any>;
+
+declare class SQLite3 {
+  constructor(path: string);
+  readonly valid: boolean;
+  close(): void;
+  exec(
+    sql: string,
+    callback?: (line: { [index: string]: string }) => void
+  ): number;
+  query(sql: string, params: SQLite3Param): Iterable<{ [index: string]: any }>;
+  update(sql: string, params: SQLite3Param): number;
+}
+
+declare const globalThis: object;

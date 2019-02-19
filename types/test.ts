@@ -5,7 +5,7 @@ system.initialize = function() {
   // this.listenForEvent("minecraft:entity_created", function() {
 
   // })
-  // const component = this.createComponent({} as EntityObject, "minecraft:inventory");
+  const component = this.createComponent({} as EntityObject, "minecraft:attack");
   // // component.
   this.broadcastEvent("minecraft:display_chat_event", "test");
 }

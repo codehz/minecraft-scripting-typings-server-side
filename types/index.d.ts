@@ -40,6 +40,8 @@ declare interface ServerPrototype<traits extends DefaultTypeTraits> {
    * This method gets called when the Minecraft Script Engine is shutting down. For the client this is when they leave the world; for the server this is after the last player has exited the world.
    */
   shutdown?: CallbackObject<traits>;
+
+  [key: string]: any;
 }
 
 declare interface ServerInstance<traits extends DefaultTypeTraits> {
@@ -262,7 +264,7 @@ declare class Server {
    * @param minorVersion This is the revision of the Minecraft Script Engine your script was designed to work with
    * @returns returns ServerPrototype
    */
-  registerServer<traits extends DefaultTypeTraits = DefaultTypeTraits>(
+  registerSystem<traits extends DefaultTypeTraits = DefaultTypeTraits>(
     majorVersion: number,
     minorVersion: number
   ): traits["prototype"];
